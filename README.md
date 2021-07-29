@@ -28,8 +28,5 @@ npm run build
 ```
 npm start
 ```
-or
-```
-npm run dev
-```
+
 NOTE: You'll need to have a Redis and a MongoDB separately, also you'll need to update the variables and put these in a .env file.

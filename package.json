@@ -4,7 +4,6 @@
   "description": "A implementation of queueing messages into a database using Redis, BullJS and MongoDB.",
   "scripts": {
     "build": "tsc",
-    "dev": "nodemon --exec ts-node src/index.ts",
     "start": "node ./dist/index.js"
   },
   "repository": {
