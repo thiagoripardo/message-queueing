@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "feef7f1c-18ef-4122-b2c8-db5abadbf9a7",
+		"name": "Message Queueing API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "V1 Get all messages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v1/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "V1 Get a message",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v1/messages/6102548acd4f1d001366886a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"messages",
+						"6102548acd4f1d001366886a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "V1 Create a message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"subject\": \"hi\",\n\t\"body\": \"this is a message from v1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "V2 Create a message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"subject\": \"hi\",\n\t\"body\": \"this is a message from v2\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/v2/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v2",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "V1 Update a message",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"subject\": \"hi\",\n\t\"body\": \"this is a updated message from v1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/messages/61025462cd4f1d0013668867",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"messages",
+						"61025462cd4f1d0013668867"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "V2 Update a message",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"subject\": \"hi\",\n\t\"body\": \"this is a updated message from v2\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/v2/messages/6102548acd4f1d001366886a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v2",
+						"messages",
+						"6102548acd4f1d001366886a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "V1 Delete a message",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v1/messages/6102560ee4fb6300134f61f4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"messages",
+						"6102560ee4fb6300134f61f4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "V2 Delete a message",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v2/messages/61025610e4fb6300134f61f6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v2",
+						"messages",
+						"61025610e4fb6300134f61f6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
