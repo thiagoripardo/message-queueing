@@ -1,21 +1,26 @@
+import _ from "lodash";
 import client, { keys } from "configs/redis";
 
 export default class RedisService {
-  public async hset(key: any, subkey: any, value: any): Promise<void> {
-    await client.hsetAsync(String(key), String(subkey), JSON.stringify(value));
+  public async hset(key: any, subkey: any, value: any): Promise<number> {
+    return client.hSet(String(key), String(subkey), JSON.stringify(value));
   }
 
-  public async hmset(key: any, values: any): Promise<void> {
-    await client.hmsetAsync(String(key), values);
+  public async hmset(key: any, values: any): Promise<number> {
+    return client.hSet(String(key), values);
   }
 
-  public async hget(key: any, subkey: any): Promise<JSON> {
-    return JSON.parse(await client.hgetAsync(String(key), String(subkey)));
+  public async hget(key: string, subkey: string): Promise<JSON | undefined> {
+    const result = await client.hGet(key, subkey);
+
+    if (result) return JSON.parse(result);
+
+    return;
   }
 
   public async hgetall(key: any): Promise<any[] | null> {
-    let results = await client.hgetallAsync(String(key));
-    if (results) {
+    const results = await client.hGetAll(String(key));
+    if (!_.isEmpty(results)) {
       return Object.keys(results).map((key) => {
         let result = JSON.parse(results[key]);
         if (result) {
@@ -27,8 +32,8 @@ export default class RedisService {
     }
   }
 
-  public async hdel(key: any, subkey: any) {
-    await client.hdelAsync(String(key), String(subkey));
+  public async hdel(key: any, subkey: any): Promise<number> {
+    return client.hDel(String(key), String(subkey));
   }
 
   public getKeys() {
